@@ -6,7 +6,7 @@ LEDGER_DIR=${LEDGER_DIR:-"/solana/ledger"}
 # fetch and print port using solana tooling
 get_tvu_solana() {
   echo "Getting shred listen port using solana cli with \$LEDGER_DIR=$LEDGER_DIR"
-  solana-validator --ledger "$LEDGER_DIR" contact-info | grep "TVU:" | cut -d ':' -f 3
+  agave-validator --ledger "$LEDGER_DIR" contact-info | grep "TVU:" | cut -d ':' -f 3
 }
 
 # fetch port using curl. not guaranteed to be accurate as we assume it uses the default port allocation order
